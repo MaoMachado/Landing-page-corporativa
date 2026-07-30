@@ -1,10 +1,18 @@
 "use client";
 
-import { BarChart3, Globe, Plug, Shield, Users, Zap } from "lucide-react";
+import {
+  BarChart3,
+  Globe,
+  Plug,
+  Shield,
+  Users,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
 import { features } from "@/libs/data";
 import { FadeIn } from "@/components/animations/FadeIn";
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, LucideIcon> = {
   BarChart3,
   Zap,
   Shield,
