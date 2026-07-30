@@ -1,21 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Landing Page",
+  title: "Nexora — Transforma datos en decisiones",
   description:
-    "Una página de aterrizaje para una empresa ficticia, con diseño moderno y responsivo.",
+    "Plataforma SaaS de análisis operativo. Unifica datos, automatiza reportes y toma decisiones basadas en insights reales.",
+  keywords: ["SaaS", "Análisis", "Datos", "Reportes", "Decisiones", "Nexora"],
+  authors: [{ name: "MaoDev" }],
 };
 
 export default function RootLayout({
@@ -24,11 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="es" className={inter.variable}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
