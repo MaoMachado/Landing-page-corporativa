@@ -5,7 +5,7 @@ import { LucideIcon } from "lucide-react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline";
-  size?: "default" | "lg";
+  size?: "default" | "lg" | "sm";
   icon?: LucideIcon;
 }
 
@@ -30,6 +30,7 @@ export function Button({
             variant === "outline",
           "h-10 px-5 text-sm": size === "default",
           "h-12 px-8 text-base": size === "lg",
+          "h-8 px-4 text-xs": size === "sm",
         },
         className,
       )}
