@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import "./globals.css";
+import { ScrollToTop } from "@/components/animations/ScrollToTop";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,6 +16,13 @@ export const metadata: Metadata = {
     "Plataforma SaaS de análisis operativo. Unifica datos, automatiza reportes y toma decisiones basadas en insights reales.",
   keywords: ["SaaS", "Análisis", "Datos", "Reportes", "Decisiones", "Nexora"],
   authors: [{ name: "MaoDev" }],
+  openGraph: {
+    title: "Nexora — Transforma datos en decisiones",
+    description: "La plataforma que unifica tus operaciones en una sola vista.",
+    type: "website",
+    locale: "es_MX",
+    siteName: "Nexora",
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +35,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <Navbar />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

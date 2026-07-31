@@ -66,3 +66,23 @@ export const testimonials = [
     rating: 5,
   },
 ];
+
+export const footerLinks = {
+  producto: [
+    { label: "Características", href: "#features" },
+    { label: "Integraciones", href: "#" },
+    { label: "Precios", href: "#cta" },
+    { label: "Changelog", href: "#" },
+  ],
+  compania: [
+    { label: "Sobre nosotros", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Carreras", href: "#" },
+    { label: "Contacto", href: "#" },
+  ],
+  legal: [
+    { label: "Privacidad", href: "#" },
+    { label: "Términos", href: "#" },
+    { label: "Cookies", href: "#" },
+  ],
+};
