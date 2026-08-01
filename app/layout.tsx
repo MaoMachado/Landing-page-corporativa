@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 import { ScrollToTop } from "@/components/animations/ScrollToTop";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <ScrollToTop />
+        <Analytics />
       </body>
     </html>
   );
