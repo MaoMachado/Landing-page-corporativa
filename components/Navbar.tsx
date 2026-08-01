@@ -13,10 +13,9 @@ export function Navbar() {
   const isScrolled = scrollY > 20;
 
   const navLinks = [
-    { label: "Producto", href: "#producto" },
     { label: "Características", href: "#features" },
     { label: "Testimonios", href: "#testimonios" },
-    { label: "Precios", href: "#precios" },
+    { label: "Contacto", href: "#cta" },
   ];
 
   return (
@@ -24,7 +23,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/60 backdrop-blur-md shadow-sm"
+          ? "bg-white/35 backdrop-blur-md shadow-sm"
           : "bg-transparent",
       )}
     >
@@ -38,7 +37,10 @@ export function Navbar() {
             <a
               href={link.href}
               key={link.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-[#2563eb]"
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-[#2563eb]",
+                isScrolled ? "text-[#1e3a8a]" : "text-white",
+              )}
             >
               {link.label}
             </a>
@@ -55,7 +57,11 @@ export function Navbar() {
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isOpen}
         >
-          {isOpen ? <X /> : <Menu />}
+          {isOpen ? (
+            <X className="text-slate-600" />
+          ) : (
+            <Menu className="text-slate-600" />
+          )}
         </button>
       </nav>
 
@@ -71,12 +77,16 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
                 className="block py-3 text-sm font-medium text-slate-600"
+                onClick={() => setTimeout(() => setIsOpen(false), 100)}
               >
                 {link.label}
               </a>
             ))}
+
+            <div className="pb-4">
+              <Button className="w-full">Comenzar gratis</Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
